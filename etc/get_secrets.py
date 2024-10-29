@@ -28,9 +28,9 @@ def get_secret():
         # https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
         raise e
 
-    print("response=",json.dumps(get_secret_value_response,indent=4,default=str))
+    print("[INFO] Secret retrieved successfully.")
     return json.loads(get_secret_value_response['SecretString'])
 
 if __name__=="__main__":
     secret = get_secret()
-    print("secret=",json.dumps(secret,indent=4,default=str))
+    print("[INFO] Secret processed successfully.")
