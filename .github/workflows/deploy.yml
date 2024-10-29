@@ -13,16 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: "FIXME"
         run: |
-          echo I do not think that we want our AWS credentials stored in DEST=dcmanager@downloads.digitalcorpora.org
-          eval $(ssh-agent)
-          ssh-add - <<< "${{ secrets.DCMANAGER_KEY }}"
-          ssh-add -l
-          cat etc/known_hosts
-          ssh -o StrictHostKeyChecking=yes -o GlobalKnownHostsFile=etc/known_hosts\
-              dcmanager@downloads.digitalcorpora.org \
-              'cd downloads.digitalcorpora.org/; git pull --recurse-submodules; make install-dependencies; make touch'
-          echo The PR was merged
+          echo at some point in the future, this should deploy to Zappa...
