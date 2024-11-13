@@ -5,11 +5,13 @@
 <p>Where do you want to go today?</p>
 
 <ul>
-<li><a href='/corpora/'>Corpora</a> --- The Digital Corpora. Explore the system and click links to download directly from Amazon S3 via HTTPS.</li>
-<li><a href='/downloads/'>Downloads</a> --- Legacy software downloads</li>
-<li><a href='/reports'>Reports</a> --- Download Reports</li>
+<li><a href='{{ root }}corpora/'>Corpora</a> --- The Digital Corpora. Explore the system and click links to download directly from Amazon S3 via HTTPS.</li>
+<li><a href='{{ root }}downloads/'>Downloads</a> --- Legacy software downloads</li>
+<li><a href='{{ root }}reports'>Reports</a> --- Download Reports</li>
 </ul>
 
 <p>Note: <b>{{ hostname }}</b> is a hosted with a <a href='https://github.com/digitalcorpora/digitalcorpora_app/'>custom app</a> running in AWS Lambda that provides download statistics and web browsing of the Digital Corpora downloads, which are hosted in the Amazon S3 bucket s3://digitalcorpora/. Downloads are performed by HTTPS from Amazon S3. </p>
+
+<p>root={{root}}</p>
 
 {% endblock %}

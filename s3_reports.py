@@ -120,7 +120,7 @@ def reports_json(*, auth, num):
     return rdict
 
 @view(REPORT_TEMPLATE_FILENAME)
-def reports_html(*, auth):
+def reports_html(*, auth, root=''):
     """If reports with a get, just return the report rendered"""
     try:
         num =  int(bottle.request.params['report'])
@@ -132,4 +132,5 @@ def reports_html(*, auth):
         rdict = {}
     rdict['reports'] = [(ct,report[0]) for (ct,report) in enumerate(REPORTS)]
     rdict['sys_version'] = sys.version
+    rdict['root'] = root
     return rdict

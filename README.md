@@ -18,9 +18,6 @@ The repo is designed to be check out as ~/downloads.digitalcorpora.org/ on a Dre
 8. Create the domain
 
 
-
-
-
 # aws deployment
 - We used https://github.com/zappa/Zappa
 - We stored the MySQL database credentials in the amazon Secrets Manager
@@ -32,6 +29,16 @@ The repo is designed to be check out as ~/downloads.digitalcorpora.org/ on a Dre
 - We deployed to a URL:
 - Need to move to a custom domain to get rid of the /production challen.
 
+1 - Add the the layer named AWS Parameters and Secrets Lambda Extension. Specify verison 11.
+2 - Click Configuration / Permission / Add Permissions
+3 - Add permissions to an AWS service / Secrets Manager
+4 - Add per
+
+Try this:
+
+1 - Go to the IAM Role Manager and find the role: https://us-east-1.console.aws.amazon.com/iam/home?region=us-west-2
+
+
 
 Here is the policy:
 ```
@@ -40,9 +47,17 @@ Here is the policy:
   "Statement": [
     {
       "Effect": "Allow",
-      "Action": "secretsmanager:GetSecretValue",
+      "Action": ["secretsmanager:GetSecretValue"],
       "Resource": "SecretARN"
     }
   ]
 }
 ```
+
+
+# Other options
+# - aws challice - completely different thing. new decorators
+
+# Move to serverless:
+https://www.serverless.com/blog/serverless-api-gateway-domain
+https://www.serverless.com/examples/aws-python-flask-api

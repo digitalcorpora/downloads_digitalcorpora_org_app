@@ -48,7 +48,7 @@ freeze:
 # Installations are used by the CI pipeline:
 # Generic:
 install-python-dependencies: $(REQ)
-	$(A) ; $(PYTHON) -m pip install --upgrade pip
+	$(PYTHON) -m pip install --upgrade pip
 	if [ -r requirements.txt ]; then $(PIP_INSTALL) -r requirements.txt ; else echo no requirements.txt ; fi
 
 # Includes ubuntu dependencies
@@ -65,7 +65,8 @@ install-macos-python: $(REQ)
 
 # Includes MacOS dependencies managed through Brew
 install-macos: $(REQ)
-	brew install libmagic
+	brew update
+	brew upgrade
 	$(PYTHON) -m pip install --upgrade pip
 	if [ -r requirements-macos.txt ]; then $(PIP_INSTALL) -r requirements-macos.txt ; else echo no requirements-ubuntu.txt ; fi
 	if [ -r requirements.txt ];       then $(PIP_INSTALL) -r requirements.txt ; else echo no requirements.txt ; fi

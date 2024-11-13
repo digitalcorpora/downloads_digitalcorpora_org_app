@@ -1,12 +1,29 @@
 {
-    "production": {
+    "corp": {
         "app_function": "bottle_app.app",
         "aws_region": "us-west-2",
         "profile_name": "default",
         "project_name": "digitalcorpora-",
         "runtime": "python3.9",
         "timeout_seconds": 300,
-        "domain":"aws-lambda.digitalcorpora.org",
+        "domain":"corp.digitalcorpora.org",
+        "certificate_arn": "arn:aws:acm:us-east-1:376778049323:certificate/f705638d-a61f-430d-b32e-3bf0d2cbcd5a",
+        "s3_bucket": "zappa-a3nprn138"
+        "route53_enabled" : false,
+        "log_level": "ERROR",
+        "environment_variables": {
+            "AWS": "YES"
+        }
+    },
+    "dev": {
+        "app_function": "bottle_app.app",
+        "aws_region": "us-west-2",
+        "profile_name": "default",
+        "project_name": "digitalcorpora-",
+        "runtime": "python3.9",
+        "timeout_seconds": 300,
+        "domain":"dev.digitalcorpora.org",
+        "route53_enabled" : false,
         "certificate_arn": "arn:aws:acm:us-east-1:376778049323:certificate/f705638d-a61f-430d-b32e-3bf0d2cbcd5a",
         "s3_bucket": "zappa-a3nprn138"
         "environment_variables": {
