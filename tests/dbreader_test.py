@@ -16,4 +16,4 @@ if __name__=='__main__':
     print("testing dbreader for AWS Secrets")
     bottle_app.aws_setup()
     dbreader = test_dbreader()
-    print(f"Successfully obtained dbreader under AWS. dbreader=",dbreader)
+    print(f"Successfully obtained dbreader under AWS.")

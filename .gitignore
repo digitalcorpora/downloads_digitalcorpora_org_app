@@ -8,3 +8,4 @@ etc/credentials.ini
 vnev
 activate
 venv
+.DS_Store

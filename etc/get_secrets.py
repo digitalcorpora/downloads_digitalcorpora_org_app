@@ -33,4 +33,4 @@ def get_secret():
 
 if __name__=="__main__":
     secret = get_secret()
-    print("secret=",json.dumps(secret,indent=4,default=str))
+    print("successfully got secret")
